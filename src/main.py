@@ -1,7 +1,7 @@
 ﻿"""
-Entry point for SOC alert automation.
+Entry point for SOC alert automation
 
-Loads configuration, enriches IOCs, scores severity, and writes report.
+Loads configuration, enriches IOCs, scores severity, and writes report
 """
 
 from __future__ import annotations
@@ -19,7 +19,7 @@ from .report import generate_report
 
 def load_alert(path: Path) -> dict:
     """
-    Load alert JSON from disk.
+    Load alert JSON from disk
     """
     with path.open("r", encoding="utf-8") as f:
         return json.load(f)
@@ -36,7 +36,7 @@ def write_report(content: str, path: Path) -> None:
 
 def main() -> None:
     """
-    Run the alert automation workflow.
+    Run the alert automation workflow
     """
     load_dotenv()
 
