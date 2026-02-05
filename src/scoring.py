@@ -1,5 +1,5 @@
 ﻿"""
-Severity scoring logic combining IP and hash reputation.
+Severity scoring logic combining IP and hash reputation
 """
 
 from __future__ import annotations
@@ -12,10 +12,10 @@ def calculate_severity(ip_data: Dict, hash_data: Dict) -> str:
     Determine severity as Low, Medium, or High.
 
     Rules (highest match wins):
-    - High if abuse_confidence >= 70 OR malicious detections >= 5.
-    - Medium if abuse_confidence between 30-69 OR malicious between 1-4 OR suspicious >= 3.
-    - Low otherwise.
-    Errors (-1 values) default to Medium to avoid under-triage.
+    - High if abuse_confidence >= 70 OR malicious detections >= 5
+    - Medium if abuse_confidence between 30-69 OR malicious between 1-4 OR suspicious >= 3
+    - Low otherwise
+    Errors (-1 values) default to Medium to avoid under-triage
     """
     abuse = ip_data.get("abuse_confidence", -1)
     malicious = hash_data.get("malicious", -1)
