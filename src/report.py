@@ -1,5 +1,5 @@
 ﻿"""
-Report generation for SOC investigation in Markdown.
+Report generation for SOC investigation in Markdown
 """
 
 from __future__ import annotations
@@ -10,7 +10,7 @@ from typing import Dict, Any
 
 def generate_report(alert: Dict[str, Any], ip_data: Dict[str, Any], hash_data: Dict[str, Any], severity: str) -> str:
     """
-    Build a Markdown investigation report string.
+    Build a Markdown investigation report string
     """
     timestamp = datetime.utcnow().isoformat() + "Z"
 
@@ -40,9 +40,9 @@ def generate_report(alert: Dict[str, Any], ip_data: Dict[str, Any], hash_data: D
 - Calculated Severity: **{severity}**
 
 ## Analyst Notes
-- If severity is High: isolate host, block IP, and submit sample to sandbox.
-- If severity is Medium: monitor connections, review EDR timeline, and consider containment if activity persists.
-- If severity is Low: document findings and continue monitoring.
+- If severity is High: isolate host, block IP, and submit sample to sandbox
+- If severity is Medium: monitor connections, review EDR timeline, and consider containment if activity persists
+- If severity is Low: document findings and continue monitoring
 
 ## Appendix
 - Enrichment errors (if any):
